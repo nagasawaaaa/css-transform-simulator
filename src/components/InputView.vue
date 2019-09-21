@@ -3,7 +3,7 @@
     <b-row>
       <b-col cols="4">
         <label :for="`type-${id}`">{{ label }}</label>
-        :{{ value }}
+        : <strong>{{ value }}</strong>
       </b-col>
       <b-col cols="8">
         <b-form-input
