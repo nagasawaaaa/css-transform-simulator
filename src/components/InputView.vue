@@ -12,6 +12,7 @@
           type="range"
           :min="min"
           :max="max"
+          :step="step"
           @input="input"
         ></b-form-input>
       </b-col>
@@ -32,23 +33,39 @@ export default {
       type: String,
       default: "labelName"
     },
+    defaultValue: {
+      type: [Number, String],
+      default: 0
+    },
     label: {
       type: String,
       default: "label Name"
     },
     max: {
       type: Number,
-      default: 1000
+      default: 100
     },
     min: {
       type: Number,
-      default: -1000
+      default: -100
+    },
+    step: {
+      type: Number,
+      default: 1
+    }
+  },
+  watch: {
+    defaultValue(newVal, oldVal) {
+      this.value = newVal;
     }
   },
   methods: {
     input() {
       this.$emit("input", this.value);
     }
+  },
+  created() {
+    this.value = this.defaultValue
   }
 };
 </script>
