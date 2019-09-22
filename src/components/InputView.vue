@@ -55,7 +55,7 @@ export default {
     }
   },
   watch: {
-    defaultValue(newVal, oldVal) {
+    defaultValue(newVal) {
       this.value = newVal;
     }
   },
@@ -65,7 +65,7 @@ export default {
     }
   },
   created() {
-    this.value = this.defaultValue
+    this.value = this.defaultValue;
   }
 };
 </script>

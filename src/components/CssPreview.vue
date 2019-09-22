@@ -28,12 +28,12 @@ export default {
     transform: {
       type: Object,
       default() {
-        return {}
+        return {};
       }
     },
     transformOrigin: {
       type: String,
-      default: ''
+      default: ""
     }
   },
   methods: {
@@ -47,7 +47,7 @@ export default {
       return `scaleX(${tf.scaleX}) scaleY(${tf.scaleY})`;
     }
   }
-}
+};
 </script>
 
 <style lang="scss">

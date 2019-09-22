@@ -19,7 +19,7 @@ export default {
     transform: {
       type: Object,
       default() {
-        return {}
+        return {};
       }
     },
     transformOrigin: {
@@ -48,13 +48,16 @@ export default {
   padding: 20px;
   border: 1px solid #ccc;
   height: 300px;
+  width: 100%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #previewElement {
-  transition: all .5s;
+  transition: all 0.5s;
   width: 100px;
   height: 100px;
-  margin: 0 auto;
   background-color: greenyellow;
   perspective: 500px;
   transform-style: preserve-3d;
