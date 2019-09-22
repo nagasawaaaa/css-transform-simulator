@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     createTranslate(tf) {
-      return `translateX(${tf.translateX}px) translateY(${tf.translateY}px) translateZ(${tf.translateZ}px)`;
+      return `translateX(${tf.translateX}px) translateY(${tf.translateY}px)`;
     },
     createRotate3d(tf) {
       return `rotateX(${tf.rotateX}deg) rotateY(${tf.rotateY}deg) rotateZ(${tf.rotateZ}deg)`;

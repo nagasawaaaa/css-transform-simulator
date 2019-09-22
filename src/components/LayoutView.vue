@@ -26,7 +26,11 @@
         </b-col>
       </b-row>
       <p class="text-center">
-        &copy; <a href="https://twitter.com/nagasawaaaa" target="_blank">nagasawaaaa</a> All Rights Reserved.
+        &copy;
+        <a href="https://twitter.com/nagasawaaaa" target="_blank">
+          nagasawaaaa
+        </a>
+        All Rights Reserved.
       </p>
     </b-container>
   </div>
