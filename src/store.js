@@ -4,8 +4,10 @@ import {
   SAVE_BACKGROUND_COLOR,
   SAVE_TRANSFORM,
   SAVE_TRANSFORM_ORIGIN,
+  SAVE_TRANSFORM_ORDER,
   INIT
 } from "./mutation-types";
+import { transformOrderOptions } from "./defaultOptions";
 import cloneDeep from "../node_modules/lodash/cloneDeep";
 
 Vue.use(Vuex);
@@ -21,6 +23,10 @@ const defaultState = {
     scaleX: 1,
     scaleY: 1
   },
+  transformOrder: {
+    id: 1,
+    value: "translate rotate scale"
+  },
   transformOrigin: "center center"
 };
 
@@ -33,6 +39,9 @@ export default new Vuex.Store({
     transform(state) {
       return state.transform;
     },
+    transformOrder(state) {
+      return state.transformOrder;
+    },
     transformOrigin(state) {
       return state.transformOrigin;
     }
@@ -43,6 +52,9 @@ export default new Vuex.Store({
     },
     [SAVE_TRANSFORM_ORIGIN](state, payload) {
       state.transformOrigin = payload;
+    },
+    [SAVE_TRANSFORM_ORDER](state, payload) {
+      state.transformOrder = payload;
     },
     [SAVE_TRANSFORM](state, payload) {
       state.transform[payload.prop] = payload.value;
@@ -57,6 +69,12 @@ export default new Vuex.Store({
     },
     setTransformOrigin({ commit }, payload) {
       commit(SAVE_TRANSFORM_ORIGIN, payload);
+    },
+    setTransformOrder({ commit }, payload) {
+      const order = transformOrderOptions.find(element => {
+        return element.value === Number(payload);
+      });
+      commit(SAVE_TRANSFORM_ORDER, order);
     },
     setTranslateX({ commit }, payload) {
       commit(SAVE_TRANSFORM, {

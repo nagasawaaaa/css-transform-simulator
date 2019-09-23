@@ -5,22 +5,24 @@
       <b-row class="mb-4">
         <b-col cols="6">
           <h3 class="mb-4">Property Settings</h3>
+          <TransformOrderSettingView />
           <TranslateSettingView />
           <RotateSettingView />
           <ScaleSettingView />
           <TransformOriginSettingView />
           <BgColorSettingView />
         </b-col>
-        <!-- TODO: プレビュー用のViewとCSSのViewを作成する -->
         <b-col cols="6">
           <PreviewView
             :background-color="backgroundColor"
             :transform="transform"
+            :transform-order="transformOrder"
             :transform-origin="transformOrigin"
           />
           <CssPreview
             :background-color="backgroundColor"
             :transform="transform"
+            :transform-order="transformOrder"
             :transform-origin="transformOrigin"
           />
         </b-col>
@@ -45,6 +47,7 @@ import RotateSettingView from "./RotateSettingView";
 import ScaleSettingView from "./ScaleSettingView";
 import TransformOriginSettingView from "./TransformOriginSettingView";
 import BgColorSettingView from "./BgColorSettingView";
+import TransformOrderSettingView from "./TransformOrderSettingView";
 
 export default {
   name: "LayoutView",
@@ -55,12 +58,14 @@ export default {
     RotateSettingView,
     ScaleSettingView,
     BgColorSettingView,
-    TransformOriginSettingView
+    TransformOriginSettingView,
+    TransformOrderSettingView
   },
   computed: {
     ...mapGetters({
       backgroundColor: "backgroundColor",
       transform: "transform",
+      transformOrder: "transformOrder",
       transformOrigin: "transformOrigin"
     })
   }
